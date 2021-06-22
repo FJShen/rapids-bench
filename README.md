@@ -12,3 +12,8 @@ python3 benchmark.py --benchmark tpcds --template template.txt --input ./tpcds-t
 
 ## To Generate traces in Accelsim:
 Create `spark-env.sh` file in `$SPARK_HOME/conf/` which defines `LD_PRELOAD` and points to your tracer_tool.so file
+
+Before running on gpu01 or gpu02:
+export CUDA_VISIBLE_DEVICES=1
+update spreadsheet
+nvidia-smi
