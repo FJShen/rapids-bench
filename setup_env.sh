@@ -47,3 +47,5 @@ if [ ! -d $TPCDS_KIT_ROOT ]; then
 fi
 
 export RAPIDS_BENCH_SETUP_WAS_RUN=
+
+echo "setup_env.sh has returned"
