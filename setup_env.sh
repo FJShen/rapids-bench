@@ -48,4 +48,9 @@ fi
 
 export RAPIDS_BENCH_SETUP_WAS_RUN=
 
+#For Intel vTune to work
+export VTUNE_HOME=/opt/intel/oneapi/vtune/2021.5.0/
+export INTEL_LIBITTNOTIFY32=${VTUNE_HOME}/lib32/runtime/libittnotify_collector.so
+export INTEL_LIBITTNOTIFY64=${VTUNE_HOME}/lib64/runtime/libittnotify_collector.so
+
 echo "setup_env.sh has returned"
