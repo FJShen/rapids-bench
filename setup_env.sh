@@ -25,6 +25,7 @@ export SPARK_RAPIDS_PLUGIN_JAR=$LIB_ROOT/rapids-4-spark_2.12-0.3.0.jar
 export SPARK_RAPIDS_PLUGIN_INTEGRATION_TEST_JAR=$LIB_ROOT/rapids-4-spark-integration-tests_2.12-0.3.0.jar
 export CUDF_JAR=$LIB_ROOT/cudf-0.17.jar
 export SCALLOP_JAR=$LIB_ROOT/scallop_2.12-3.5.1.jar
+export ITT_JAR=$LIB_ROOT/itt_jni-1.0.jar
 
 # Install DBGEN for TPCH
 DBGEN_ROOT=$BASH_ROOT/tpch-dbgen
@@ -49,8 +50,11 @@ fi
 export RAPIDS_BENCH_SETUP_WAS_RUN=
 
 #For Intel vTune to work
-export VTUNE_HOME=/opt/intel/oneapi/vtune/2021.5.0/
+export VTUNE_HOME=/opt/intel/oneapi/vtune/latest/
 export INTEL_LIBITTNOTIFY32=${VTUNE_HOME}/lib32/runtime/libittnotify_collector.so
 export INTEL_LIBITTNOTIFY64=${VTUNE_HOME}/lib64/runtime/libittnotify_collector.so
+
+#For JVM to find libittjni.so
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:`pwd`/lib
 
 echo "setup_env.sh has returned"

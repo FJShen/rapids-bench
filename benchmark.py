@@ -106,7 +106,7 @@ def main():
             for k, v in config.items():
                 cmd.append("--conf " + k + "=" + v)
 
-            cmd.append("--jars $SPARK_RAPIDS_PLUGIN_JAR,$CUDF_JAR,$SCALLOP_JAR")
+            cmd.append("--jars $SPARK_RAPIDS_PLUGIN_JAR,$CUDF_JAR,$SCALLOP_JAR,$ITT_JAR")
             cmd.append("--class com.nvidia.spark.rapids.tests.BenchmarkRunner")
             cmd.append("$SPARK_RAPIDS_PLUGIN_INTEGRATION_TEST_JAR")
             cmd.append("--benchmark " + args.benchmark)
