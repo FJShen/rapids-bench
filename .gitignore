@@ -10,3 +10,4 @@ tpch-tables/
 tpcds-tables/
 tpcds-kit/
 output/
+.*/
