@@ -1,4 +1,4 @@
 $SPARK_HOME/bin/spark-submit \
---master local[*] \
+--master local[1] \
 --conf spark.eventLog.enabled=true \
 --conf spark.eventLog.dir=./spark-event-logs \
