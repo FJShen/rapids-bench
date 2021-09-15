@@ -4,6 +4,7 @@
 *.zip
 lib/
 spark-3.0.0-bin-hadoop3.2/
+spark-3.0.3-bin-hadoop3.2/
 tpch-dbgen/
 spark-event-logs/
 tpch-tables/
