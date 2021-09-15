@@ -2,7 +2,7 @@ import os
 import subprocess
 from datetime import datetime
 
-dry_run = False
+dry_run = True
 
 
 def main():
@@ -12,11 +12,13 @@ def main():
 
     direct_output = True  #If false, direct stdout and stderr to /dev/null
 
-    query_range = range(1, 22 + 1)
+    query_range = (1,6,3,5,9,18)
 
     iteration = 6
 
-    tests = 7  #how many times the application needs to be profiled
+    tests = 6  #how many times the application needs to be profiled
+
+    test_id_offset = 1
 
     result_dir_home = "/media/10T_external/shen449/intel/vtune/projects/rapids_tpch/"
     #result_dir_home = "/home/shen449/intel/vtune/projects/rapids_tpch/"
@@ -40,7 +42,7 @@ def main():
     for test_id in range(1, tests + 1):
         for i in query_range:
             proj_identifier = "TPCH_Q" + str(i) + "_IT" + str(
-                iteration) + "_TEST" + str(test_id) + "_1thrd_gc"
+                iteration) + "_TEST" + str(test_id + test_id_offset) + "_1thrd_gc"
             proj_identifier = (proj_identifier +
                                "_Xcomp") if Xcomp else (proj_identifier +
                                                         "_noXcomp")

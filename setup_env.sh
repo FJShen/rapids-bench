@@ -1,13 +1,13 @@
 #!/bin/bash
 export BASH_ROOT="$( cd "$( dirname "$BASH_SOURCE" )" && pwd )"
 
-# Setup Spark 3.0.0 (scala 2.12) for spark submit
-SPARK_SUBDIR="/spark-3.0.0-bin-hadoop3.2/"
+# Setup Spark 3.0.3 (scala 2.12) for spark submit
+SPARK_SUBDIR="/spark-3.0.3-bin-hadoop3.2/"
 SPARK_HOME=$BASH_ROOT$SPARK_SUBDIR
 if [ ! -d $SPARK_HOME ]; then
-    wget https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0-bin-hadoop3.2.tgz
-    tar xzvf spark-3.0.0-bin-hadoop3.2.tgz -C $BASH_ROOT
-    rm spark-3.0.0-bin-hadoop3.2.tgz
+    wget https://archive.apache.org/dist/spark/spark-3.0.3/spark-3.0.3-bin-hadoop3.2.tgz
+    tar xzvf spark-3.0.3-bin-hadoop3.2.tgz -C $BASH_ROOT
+    rm spark-3.0.3-bin-hadoop3.2.tgz
 fi
 export SPARK_HOME=$SPARK_HOME
 
@@ -57,4 +57,4 @@ export INTEL_LIBITTNOTIFY64=${VTUNE_HOME}/lib64/runtime/libittnotify_collector.s
 #For JVM to find libittjni.so
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:`pwd`/lib
 
-echo "setup_env.sh has returned"
+echo "setup_env.sh has returned, SPARK_HOME is "$SPARK_HOME
